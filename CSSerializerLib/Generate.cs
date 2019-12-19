@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using CSAc4yAnnotationsFW;
 
 namespace CSSerializerLib
 {
@@ -20,6 +21,7 @@ namespace CSSerializerLib
             string _guidValue = "";
             Persistent persistent = null;
             Boolean isPersistent = false;
+            Ac4yEmbedded embedded = null;
             try
             {
                 persistent = (Persistent)anyType.GetCustomAttribute(typeof(Persistent), true);
@@ -32,7 +34,7 @@ namespace CSSerializerLib
             }
             catch (Exception _exception)
             {
-
+                Console.WriteLine(_exception.Message);
             }
             PropertyInfo[] _propInf = anyType.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
 
@@ -55,6 +57,12 @@ namespace CSSerializerLib
                 }
                 else
                 {
+                    //ezt szeretném debuggolni h lássam mit ír a string-be
+                    IEnumerable<CustomAttributeData> attributes = _prop.CustomAttributes;
+                    foreach(var attribute in attributes)
+                    {
+                        string type = attribute.AttributeType.ToString();
+                    }
                     _ac4yClass1.PropertyList.Add(new Ac4yProperty(_prop.Name, _prop.PropertyType.Name));
                 }
             }

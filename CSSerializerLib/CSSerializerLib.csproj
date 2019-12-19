@@ -8,10 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSAc4yMasterClassLib" Version="1.0.2" />
-    <PackageReference Include="CSGUIDLib" Version="1.0.0" />
-    <PackageReference Include="CSNeedToSerializeAttributeLib" Version="1.0.0" />
-    <PackageReference Include="CSPersistentAttributeLib" Version="1.0.0" />
+    <Reference Include="CSAc4yAnnotationsFW">
+      <HintPath>..\..\..\..\..\Library\LPCSharp\CSAc4yAnnotationsFW.dll</HintPath>
+    </Reference>
+    <Reference Include="CSAc4yClassFW">
+      <HintPath>..\..\..\..\..\Library\LPCSharp\CSAc4yClassFW.dll</HintPath>
+    </Reference>
+    <Reference Include="CSGUIDLibFW">
+      <HintPath>..\..\..\..\..\Library\LPCSharp\CSGUIDLibFW.dll</HintPath>
+    </Reference>
+    <Reference Include="CSNeedToSerializeAttributeLibFW">
+      <HintPath>..\..\..\..\..\Library\LPCSharp\CSNeedToSerializeAttributeLibFW.dll</HintPath>
+    </Reference>
+    <Reference Include="CSPersistentAttributeLibFW">
+      <HintPath>..\..\..\..\..\Library\LPCSharp\CSPersistentAttributeLibFW.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
